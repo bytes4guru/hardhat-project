@@ -15,7 +15,7 @@ contract Lock {
             0 < _unlockTime,
             "Unlock time should be in the future"
         );
-        unlockTime = _unlockTime;
+        unlockTime = block.timestamp + _unlockTime;
         owner = payable(msg.sender);
     }
 
